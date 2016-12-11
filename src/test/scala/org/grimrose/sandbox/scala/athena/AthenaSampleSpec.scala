@@ -34,7 +34,7 @@ class AthenaSampleSpec
     ConnectionPool.singleton(new DataSourceConnectionPool(dataSource))
   }
 
-  it should "be found tables" in {
+  it should "be counted by os" in {
     using(ConnectionPool.borrow()) { conn ⇒
       using(conn.createStatement()) { stmt ⇒
         // language=SQL
@@ -59,7 +59,7 @@ class AthenaSampleSpec
     }
   }
 
-  it should "be count by status" in {
+  it should "be counted by status" in {
     val list = using(ConnectionPool.borrow()) { conn ⇒
       using(conn.createStatement()) { stmt ⇒
         // language=SQL
